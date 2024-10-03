@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :proveedores
   get "visitors/index"
   get "visitors/faq"
   get "visitors/acerca_de"
@@ -13,5 +14,5 @@ Rails.application.routes.draw do
   get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
 
  # Defines the root path route ("/")
- root "visitors#index"
+ root "proveedores#index"
 end
