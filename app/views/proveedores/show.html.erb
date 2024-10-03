@@ -1,10 +1,48 @@
-<p style="color: green"><%= notice %></p>
+<p style="color: green">
+  <%= notice %>
+</p>
 
-<%= render @proveedor %>
-
-<div>
-  <%= link_to "Edit this proveedor", edit_proveedor_path(@proveedor) %> |
-  <%= link_to "Back to proveedores", proveedores_path %>
-
-  <%= button_to "Destroy this proveedor", @proveedor, method: :delete %>
+<div class="container">
+  <table class="table">
+    <thead>
+      <th scope="col">ID</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Apellidos</th>
+      <th scope="col">Telefono</th>
+      <th scope="col">Nit</th>
+      <th scope="col">Correo</th>
+      <th scope="col">Direccion</th>
+      <th scope="col">Acciones</th>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">
+          <%= @proveedor.id %>
+            </td>
+        <td>
+          <%= @proveedor.nombres %>
+        </td>
+        <td>
+          <%= @proveedor.apellidos %>
+        </td>
+        <td>
+          <%= @proveedor.telefono %>
+        </td>
+        <td>
+          <%= @proveedor.nit %>
+        </td>
+        <td>
+          <%= @proveedor.correo %>
+        </td>
+        <td>
+          <%= @proveedor.direccion %>
+        </td>
+        <td>
+          <%= link_to "Edit" , edit_proveedor_path(@proveedor) %>
+            <%= button_to "Destroy " , @proveedor, method: :delete %>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <%= link_to "Back to proveedores" , proveedores_path %>
 </div>
