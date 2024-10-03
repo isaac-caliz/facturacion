@@ -1,0 +1,23 @@
+<%= simple_form_for(@producto) do |f| %>
+  <%= f.error_notification %>
+    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+      <div class="form-inputs">
+        <%= f.input :nombre %>
+          <%= f.input :descripcion %>
+            <%= f.input :precio %>
+              <%= f.input :stock %>
+                <%= f.association :proveedor %>
+      </div>
+
+
+      <div class="d-flex ">
+
+        <button type="button" class="btn btn-primary m-2">
+          <%= f.button :submit, class: "text-light" %>
+        </button>
+        <button type="button" class="btn btn-secondary m-2">
+          <%= link_to "Regresar" , productos_path, class: "text-light" %>
+        </button>
+      </div>
+      <% end %>

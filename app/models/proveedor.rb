@@ -15,4 +15,7 @@
 #
 class Proveedor < ApplicationRecord
   # Validaciones y relaciones aquí
+  def to_s
+    nombres
+  end
 end

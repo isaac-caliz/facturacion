@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :productos
   resources :proveedores
   get "visitors/index"
   get "visitors/faq"

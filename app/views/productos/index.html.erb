@@ -1,0 +1,48 @@
+<p style="color: green">
+  <%= notice %>
+</p>
+
+<% content_for :title, "Productos" %>
+  <div class="container">
+    <h1>Productos</h1>
+    <table class="table">
+      <thead>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Descripcion</th>
+        <th>Precio</th>
+        <th>Stock</th>
+        <th>Proveedor</th>
+        <th>Acciones</th>
+      </thead>
+      <tbody>
+        <% @productos.each do | producto | %>
+          <tr>
+            <th class="row">
+              <%= producto.id%>
+            </th>
+            <td>
+              <%= producto.nombre%>
+            </td>
+            <td>
+              <%= producto.descripcion%>
+            </td>
+            <td>
+              <%= producto.precio%>
+            </td>
+            <td>
+              <%= producto.stock%>
+            </td>
+            <td>
+              <%= producto.proveedor%>
+            </td>
+            <td>
+              <%= link_to "Edit" , edit_producto_path(producto.id) %>
+                <%= link_to "Show" , producto %>
+            </td>
+          </tr>
+          <% end %>
+      </tbody>
+    </table>
+    <%= link_to "New producto" , new_producto_path %>
+  </div>

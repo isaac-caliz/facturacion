@@ -1,0 +1,44 @@
+<p style="color: green">
+  <%= notice %>
+</p>
+
+<div class="container">
+  <table class="table">
+    <thead>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Descripcion</th>
+      <th>Precio</th>
+      <th>Stock</th>
+      <th>Proveedor</th>
+      <th>Acciones</th>
+    </thead>
+    <tbody>
+      <tr>
+        <th>
+          <%= @producto.id %>
+        </th>
+        <td>
+          <%= @producto.nombre %>
+        </td>
+        <td>
+          <%= @producto.descripcion %>
+        </td>
+        <td>
+          <%= @producto.precio %>
+        </td>
+        <td>
+          <%= @producto.stock %>
+        </td>
+        <td>
+          <%= @producto.proveedor %>
+        </td>
+        <td>
+          <%= link_to "Edit" , edit_producto_path(@producto) %>
+            <%= button_to "Destroy " , @producto, method: :delete %>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <%= link_to "Back to productos" , productos_path %>
+</div>
