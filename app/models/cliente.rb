@@ -13,4 +13,7 @@
 #  updated_at :datetime         not null
 #
 class Cliente < ApplicationRecord
+  def to_s
+    nombres + " "+ apellidos
+  end
 end

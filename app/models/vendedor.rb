@@ -12,4 +12,7 @@
 #  updated_at         :datetime         not null
 #
 class Vendedor < ApplicationRecord
+  def to_s
+    nombre + " " + apellido
+  end
 end

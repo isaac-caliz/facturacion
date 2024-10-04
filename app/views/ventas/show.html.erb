@@ -1,0 +1,40 @@
+<p style="color: green">
+  <%= notice %>
+</p>
+
+<div class="container">
+  <table class="table">
+    <thead>
+      <th scope="col">ID</th>
+      <th scope="col">Cliente</th>
+      <th scope="col">Vendedor</th>
+      <th scope="col">Fecha</th>
+      <th scope="col">Total</th>
+      <th scope="col">Acciones</th>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">
+          <%= @venta.id %>
+        </th>
+        <td>
+          <%= @venta.cliente%>
+        </td>
+        <td>
+          <%= @venta.vendedor%>
+        </td>
+        <td>
+          <%= @venta.fecha%>
+        </td>
+        <td>
+          <%= @venta.total%>
+        </td>
+        <td>
+          <%= link_to "Edit" , edit_venta_path(@venta) %> |
+            <%= button_to "Destroy" , @venta, method: :delete %>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <%= link_to "Back to ventas" , ventas_path %>
+</div>
