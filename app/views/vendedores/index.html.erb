@@ -1,16 +1,50 @@
-<p style="color: green"><%= notice %></p>
+<p style="color: green">
+  <%= notice %>
+</p>
 
-<% content_for :title, "Vendedores" %>
+<div class="container">
 
-<h1>Vendedores</h1>
+  <% content_for :title, "Vendedores" %>
 
-<div id="vendedores">
-  <% @vendedores.each do |vendedor| %>
-    <%= render vendedor %>
-    <p>
-      <%= link_to "Show this vendedor", vendedor %>
-    </p>
-  <% end %>
+    <h1>Vendedores</h1>
+    <%= link_to "New vendedor" , new_vendedor_path %>
+      <table class="table">
+        <thead>
+          <th scope="col">ID</th>
+          <th scope="col">NOMBRES</th>
+          <th scope="col">APELLIDOS</th>
+          <th scope="col">TELEFONO</th>
+          <th scope="col">CORREO</th>
+          <th scope="col">FECHA CONTRATACION</th>
+          <th scope="col">ACCIONES</th>
+        </thead>
+        <tbody>
+          <% @vendedores.each do |vendedor| %>
+            <tr>
+              <th scope="row">
+                <%= vendedor.id %>
+              </th>
+              <td>
+                <%= vendedor.nombre %>
+              </td>
+              <td>
+                <%= vendedor.apellido %>
+              </td>
+              <td>
+                <%= vendedor.telefono %>
+              </td>
+              <td>
+                <%= vendedor.correo %>
+              </td>
+              <td>
+                <%= vendedor.fecha_contratacion %>
+              </td>
+              <td>
+                <%= link_to "Edit" , edit_vendedor_path(vendedor.id) %>
+                  <%= link_to "Show" , vendedor %>
+              </td>
+            </tr>
+            <% end %>
+        </tbody>
+      </table>
 </div>
-
-<%= link_to "New vendedor", new_vendedor_path %>

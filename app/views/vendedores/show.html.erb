@@ -1,10 +1,46 @@
-<p style="color: green"><%= notice %></p>
+<p style="color: green">
+  <%= notice %>
+</p>
 
-<%= render @vendedor %>
-
-<div>
-  <%= link_to "Edit this vendedor", edit_vendedor_path(@vendedor) %> |
-  <%= link_to "Back to vendedores", vendedores_path %>
-
-  <%= button_to "Destroy this vendedor", @vendedor, method: :delete %>
+<div class="container">
+  <table class="table">
+    <thead>
+      <th scope="col">ID</th>
+      <th scope="col">NOMBRES</th>
+      <th scope="col">APELLIDOS</th>
+      <th scope="col">TELEFONO</th>
+      <th scope="col">CORREO</th>
+      <th scope="col">FECHA CONTRATACION</th>
+      <th scope="col">ACCIONES</th>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">
+          <%= @vendedor.id %>
+        </th>
+        <td>
+          <%= @vendedor.nombre %>
+        </td>
+        <td>
+          <%= @vendedor.apellido %>
+        </td>
+        <td>
+          <%= @vendedor.telefono %>
+        </td>
+        <td>
+          <%= @vendedor.correo %>
+        </td>
+        <td>
+          <%= @vendedor.fecha_contratacion %>
+        </td>
+        <td>
+          <%= link_to "Edit" , edit_vendedor_path(@vendedor.id) %>
+            <%= button_to "Destroy " , @vendedor, method: :delete %>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <button type="button" class="btn btn-secondary m-2">
+    <%= link_to "Regresar" , vendedores_path, class: "text-light" %>
+  </button>
 </div>

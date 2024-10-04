@@ -1,12 +1,14 @@
 <% content_for :title, "Editing vendedor" %>
 
-<h1>Editing vendedor</h1>
+  <div class="container">
 
-<%= render "form", vendedor: @vendedor %>
+    <h1>Editing vendedor</h1>
 
-<br>
+    <%= render "form" , vendedor: @vendedor %>
+      <br>
+      <div>
+        <%= link_to "Show this vendedor" , @vendedor %> |
+          <%= link_to "Back to vendedores" , vendedores_path %>
+      </div>
 
-<div>
-  <%= link_to "Show this vendedor", @vendedor %> |
-  <%= link_to "Back to vendedores", vendedores_path %>
-</div>
+  </div>
