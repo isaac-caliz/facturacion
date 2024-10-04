@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :vendedores
+  resources :clientes
   resources :productos
   resources :proveedores
   get "visitors/index"

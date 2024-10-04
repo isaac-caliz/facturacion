@@ -1,0 +1,30 @@
+# == Schema Information
+#
+# Table name: clientes
+#
+#  id         :integer          not null, primary key
+#  apellidos  :string
+#  correo     :string
+#  direccion  :text
+#  nit        :string
+#  nombres    :string
+#  telefono   :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+one:
+  nombres: MyString
+  apellidos: MyString
+  telefono: MyString
+  nit: MyString
+  correo: MyString
+  direccion: MyText
+
+two:
+  nombres: MyString
+  apellidos: MyString
+  telefono: MyString
+  nit: MyString
+  correo: MyString
+  direccion: MyText

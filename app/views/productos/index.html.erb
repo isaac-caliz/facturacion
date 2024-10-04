@@ -5,6 +5,7 @@
 <% content_for :title, "Productos" %>
   <div class="container">
     <h1>Productos</h1>
+    <%= link_to "New producto" , new_producto_path %>
     <table class="table">
       <thead>
         <th>ID</th>
@@ -44,5 +45,4 @@
           <% end %>
       </tbody>
     </table>
-    <%= link_to "New producto" , new_producto_path %>
   </div>
