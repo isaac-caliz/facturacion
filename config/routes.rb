@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :ventadetalles
   resources :ventas
   resources :vendedores
   resources :clientes

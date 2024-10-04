@@ -1,0 +1,15 @@
+<div class="container">
+  <% content_for :title, "Editing ventadetalle" %>
+
+    <h1>Editing ventadetalle</h1>
+
+    <%= render "form" , ventadetalle: @ventadetalle %>
+
+      <br>
+
+      <div>
+        <%= link_to "Show this ventadetalle" , @ventadetalle %> |
+          <%= link_to "Back to ventadetalles" , ventadetalles_path %>
+      </div>
+
+</div>

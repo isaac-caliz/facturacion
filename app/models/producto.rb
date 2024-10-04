@@ -21,4 +21,7 @@
 #
 class Producto < ApplicationRecord
   belongs_to :proveedor
+  def to_s
+    nombre
+  end
 end

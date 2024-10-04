@@ -23,4 +23,7 @@
 class Venta < ApplicationRecord
   belongs_to :cliente
   belongs_to :vendedor
+  def to_s
+    "#{fecha} - Cliente: #{cliente.nombres} #{cliente.apellidos}, Vendedor: #{vendedor.nombre} #{vendedor.apellido}"
+  end
 end

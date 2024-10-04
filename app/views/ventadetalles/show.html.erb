@@ -1,0 +1,40 @@
+<p style="color: green">
+  <%= notice %>
+</p>
+
+<div class="container">
+  <table class="table">
+    <thead>
+      <th scope="col">ID</th>
+      <th scope="col">Venta</th>
+      <th scope="col">Producto</th>
+      <th scope="col">Cantidad</th>
+      <th scope="col">Precio</th>
+      <th scope="col">Acciones</th>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="col">
+          <%= @ventadetalle.id %>
+        </th>
+        <td>
+          <%= @ventadetalle.venta %>
+        </td>
+        <td>
+          <%= @ventadetalle.producto %>
+        </td>
+        <td>
+          <%= @ventadetalle.cantidad %>
+        </td>
+        <td>
+          <%= @ventadetalle.precio %>
+        </td>
+        <td>
+          <%= link_to "Edit" , edit_ventadetalle_path(@ventadetalle) %>
+            <%= button_to "Destroy " , @ventadetalle, method: :delete %>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <%= link_to "Back to ventadetalles" , ventadetalles_path %>
+</div>

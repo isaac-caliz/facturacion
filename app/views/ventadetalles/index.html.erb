@@ -1,0 +1,45 @@
+<p style="color: green">
+  <%= notice %>
+</p>
+
+<% content_for :title, "Ventadetalles" %>
+  <div class="container">
+
+    <h1>Detalles de Venta</h1>
+    <%= link_to "New ventadetalle" , new_ventadetalle_path %>
+      <table class="table">
+        <thead>
+          <th scope="col">ID</th>
+          <th scope="col">Venta </th>
+          <th scope="col">Producto</th>
+          <th scope="col">Cantidad</th>
+          <th scope="col">Precio</th>
+          <th scope="col">Acciones</th>
+        </thead>
+        <tbody>
+          <% @ventadetalles.each do | detalle | %>
+            <tr>
+              <th scope="row">
+                <%= detalle.id %>
+              </th>
+              <td>
+                <%= detalle.venta %>
+              </td>
+              <td>
+                <%= detalle.producto %>
+              </td>
+              <td>
+                <%= detalle.cantidad %>
+              </td>
+              <td>
+                <%= detalle.precio %>
+              </td>
+              <td>
+                <%= link_to "Edit" , edit_ventadetalle_path(detalle.id) %>
+                  <%= link_to "Show" , detalle %>
+              </td>
+            </tr>
+            <% end %>
+        </tbody>
+      </table>
+  </div>
