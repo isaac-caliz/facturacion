@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :ventadetalles
   resources :ventas
   resources :vendedores
@@ -19,5 +20,5 @@ Rails.application.routes.draw do
   get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
 
  # Defines the root path route ("/")
- root "proveedores#index"
+ root "visitors#index"
 end

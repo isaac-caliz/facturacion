@@ -13,8 +13,7 @@
             <%= yield :head %>
 
                 <link rel="manifest" href="/manifest.json">
-                <link rel="icon" href="/icon.png" type="image/png">
-                <link rel="icon" href="/icon.svg" type="image/svg+xml">
+                <link rel="icon" href="https://cdn.icon-icons.com/icons2/2072/PNG/512/browser_internet_page_security_web_webpage_website_icon_127036.png" type="image/png">
                 <link rel="apple-touch-icon" href="/icon.png">
                 <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
                     <%= javascript_importmap_tags %>
@@ -54,13 +53,36 @@
                         <i class="fas fa-receipt"></i> Detalle Ventas
                     </a>
                 </li>
+                <li>
+                    <% if user_signed_in? %>
+                        <%= link_to "Sign out" , destroy_user_session_path, data: { turbo_method: :delete } %>
+                            <% else %>
+                                <%= link_to "Log in" , new_user_session_path %>
+                                    <% end %>
+
+                </li>
+                <li>
+                    <!-- Redireccion y cierre de sesion con un boton -->
+                    <!-- <%= button_to( "Log Out" , destroy_user_session_path, method: :delete ) %> -->
+                </li>
             </ul>
         </div>
     </nav>
-    <!-- Navbar content -->
-    </nav>
+    <% if notice.present?%>
+        <div class="alert alert-success text-center" role="alert">
+            <%= notice %>
+        </div>
+        <% end %>
 
-    <%= yield %>
+            <% if alert.present?%>
+                <div class="alert alert-success text-center" role="alert">
+                    <%= alert %>
+                </div>
+                <% end %>
+
+
+
+                    <%= yield %>
 </body>
 
 </html>

@@ -1,57 +1,51 @@
 <div>
-  <% if notice.present? %>
-    <div class="alert alert-success text-center" role="alert">
-      <%= notice %>
+  <% content_for :title, "Proveedores" %>
+
+    <div class="container">
+      <h1>Proveedores</h1>
+      <%= link_to "New proveedor" , new_proveedor_path %>
+        <table class="table">
+          <thead>
+            <th scope="col">ID</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellidos</th>
+            <th scope="col">Telefono</th>
+            <th scope="col">Nit</th>
+            <th scope="col">Correo</th>
+            <th scope="col">Direccion</th>
+            <th scope="col">Acciones</th>
+          </thead>
+          <tbody>
+            <% @proveedores.each do |proveedor| %>
+              <tr>
+                <th scope="row">
+                  <%= proveedor.id %>
+                </th>
+                <td>
+                  <%= proveedor.nombres %>
+                </td>
+                <td>
+                  <%= proveedor.apellidos %>
+                </td>
+                <td>
+                  <%= proveedor.telefono %>
+                </td>
+                <td>
+                  <%= proveedor.nit %>
+                </td>
+                <td>
+                  <%= proveedor.correo %>
+                </td>
+                <td>
+                  <%= proveedor.direccion %>
+                </td>
+                <td>
+                  <%= link_to "Edit" , edit_proveedor_path(proveedor.id) %>
+                    <%= link_to "Show" , proveedor %>
+                </td>
+              </tr>
+              <% end %>
+          </tbody>
+        </table>
     </div>
-    <% end %>
-
-      <% content_for :title, "Proveedores" %>
-
-        <div class="container">
-          <h1>Proveedores</h1>
-          <%= link_to "New proveedor" , new_proveedor_path %>
-            <table class="table">
-              <thead>
-                <th scope="col">ID</th>
-                <th scope="col">Nombre</th>
-                <th scope="col">Apellidos</th>
-                <th scope="col">Telefono</th>
-                <th scope="col">Nit</th>
-                <th scope="col">Correo</th>
-                <th scope="col">Direccion</th>
-                <th scope="col">Acciones</th>
-              </thead>
-              <tbody>
-                <% @proveedores.each do |proveedor| %>
-                  <tr>
-                    <th scope="row">
-                      <%= proveedor.id %>
-                        </th>
-                    <td>
-                      <%= proveedor.nombres %>
-                    </td>
-                    <td>
-                      <%= proveedor.apellidos %>
-                    </td>
-                    <td>
-                      <%= proveedor.telefono %>
-                    </td>
-                    <td>
-                      <%= proveedor.nit %>
-                    </td>
-                    <td>
-                      <%= proveedor.correo %>
-                    </td>
-                    <td>
-                      <%= proveedor.direccion %>
-                    </td>
-                    <td>
-                      <%= link_to "Edit" , edit_proveedor_path(proveedor.id) %>
-                        <%= link_to "Show" , proveedor %>
-                    </td>
-                  </tr>
-                  <% end %>
-              </tbody>
-            </table>
-        </div>
 </div>
